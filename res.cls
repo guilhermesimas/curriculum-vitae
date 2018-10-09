@@ -222,10 +222,17 @@
     \@ifundefined{@addresstwo}{
       % only one address
       \leavevmode\hbox to \textwidth{\hfil\@tablebox{\@addressone}\hfil}\par
-    }{
-      % two addresses
-      \leavevmode\hbox to \textwidth{\@tablebox{\@addressone}\hfil
+    }{%
+      \@ifundefined{@addressthree}{
+        % two addresses
+        \leavevmode\hbox to \textwidth{\@tablebox{\@addressone}\hfil
 				     \@tablebox{\@addresstwo}}\par
+     }{%
+        % three addresses
+        \leavevmode\hbox to \textwidth{\@tablebox{\@addressone}\hfil
+				     \@tablebox{\@addresstwo}\hfil
+				     \@tablebox{\@addressthree}}\par
+     }%
     }%
   }%
 \endgroup}
@@ -494,9 +501,10 @@
 %
 \let\@addressone\relax
 \let\@addresstwo\relax
+\let\@addressthree\relax
 
 \def\address#1{
-  \@ifundefined{@addressone}{\def\@addressone{#1}}{\def\@addresstwo{#1}}}
+	\@ifundefined{@addressone}{\def\@addressone{#1}}{\@ifundefined{@addresstwo}{\def\@addresstwo{#1}}{\def\@addressthree{#1}}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % if you want to print your name and address is a slightly
