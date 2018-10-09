@@ -185,7 +185,7 @@
 %\DeclareOption{11pt}{\renewcommand\@ptsize{1}}
 %\DeclareOption{12pt}{\renewcommand\@ptsize{2}}
 
-\PassOptionsToClass{11pt,12pt}{article}
+\PassOptionsToClass{a4paper,11pt,12pt}{article}
 \LoadClassWithOptions{article}
 
 \newif\if@line
@@ -566,7 +566,7 @@
 \def\employer#1{\def\@employer{\print@employer{#1}}}
 \def\location#1{\def\@location{\print@location{#1}}}
 \def\dates#1{\def\@dates{\print@dates{#1}}}
-\def\title#1{\def\@title{\print@title{#1}}}
+\def\title#1{\def\@title{\print@title{\sl #1}}}
 
 \let\l@justify\raggedright
 \let\r@justify\raggedleft
@@ -805,8 +805,8 @@
 \pagestyle{empty}  % don't want page numbers
 
 \begin{format}
-\title{l}\employer{r}\\
-\location{l}\dates{r}\\
+\title{l}\dates{r}\\
+\employer{l}\\
 \body\\
 \end{format}
 
