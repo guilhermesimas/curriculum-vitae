@@ -215,7 +215,8 @@
 %
 \def\@printcentername{\begingroup
   % print the name centered
-  \leavevmode\hbox to \textwidth{\hfil\@tablebox{\namefont\@name}\hfil}\par
+  \leavevmode\hbox to \textwidth{\hfil\@tablebox{\namefont\@name}\hfil}
+  \vskip 10pt
   \@ifundefined{@addressone}{%
     % do nothing
   }{%
@@ -235,6 +236,8 @@
      }%
     }%
   }%
+  \vskip 10pt
+  \fullline
 \endgroup}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -480,7 +483,7 @@
 %
 \def\fullline{		% hrules only listen to \hoffset
   \nointerlineskip	% so I have this code	  
-  \moveleft\hoffset\vbox{\hrule width\textwidth} 
+  \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Horizontal line after name; adjust line thickness by changing the '1pt'
   \nointerlineskip
 }
 
