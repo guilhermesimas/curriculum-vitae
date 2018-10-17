@@ -563,7 +563,7 @@
 %   \body
 %
 
-\def\employer#1{\def\@employer{\print@employer{#1}}}
+\def\employer#1{\def\@employer{\print@employer{\textbf{#1}}}}
 \def\location#1{\def\@location{\print@location{#1}}}
 \def\dates#1{\def\@dates{\print@dates{#1}}}
 \def\title#1{\def\@title{\print@title{\sl #1}}}
@@ -786,7 +786,7 @@
 \topmargin 0pt
 \headheight 0pt
 \headsep 0pt
-\textheight 9in
+\textheight 10in
 \parindent 0pt
 \topmargin 0in
 \oddsidemargin 0pt
