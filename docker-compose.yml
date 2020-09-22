@@ -1,0 +1,7 @@
+version: "3.5"
+services:
+  pdf:
+    image: blang/latex:ubuntu
+    volumes:
+      - ./:/data
+    command: pdflatex resume.tex
